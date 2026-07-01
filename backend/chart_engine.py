@@ -1685,8 +1685,10 @@ def humanize_notes(notes: list[Note], rng: random.Random, amount: float = 0.008)
 # Main chart generator (Steps 11-15, 19-20)
 # ---------------------------------------------------------------------------
 
-def value_at(times: list[float], values: list[float], t: float) -> float:
-    if not times:
+def value_at(times, values: list[float], t: float) -> float:
+    # ``times`` may be a Python list or an ndarray; ``len`` works for both and
+    # avoids ndarray's ambiguous truth value.
+    if len(times) == 0 or not values:
         return 0.0
     idx = int(np.searchsorted(times, t, side="left"))
     idx = max(0, min(idx, len(values) - 1))
@@ -1854,6 +1856,12 @@ def generate_chart(
     cfg = DIFFICULTIES[difficulty]
     base_sty = STYLES.get(style, STYLES["auto"])
     has_melody = bool(analysis.melody)
+    # Pre-convert the frame-time axis to an ndarray ONCE.  value_at/peak_near
+    # call np.searchsorted on this axis ~11× per grid step; passing a Python
+    # list forces numpy to re-copy the whole 9k-element list to an array on
+    # every call (O(steps × frames) — the dominant cost for long songs).  A
+    # single asarray makes each lookup an O(log n) search on a real ndarray.
+    frame_times_arr = np.asarray(analysis.frame_times, dtype=np.float64)
     tempo_map = analysis.tempo_map or [TempoPoint(time=0.0, bpm=analysis.bpm)]
     focus_segs = analysis.focus_segments or []
 
@@ -1945,8 +1953,8 @@ def generate_chart(
         phrase_idx = int(t // phrase_len)
         if phrase_idx not in phrase_cache:
             ps = phrase_idx * phrase_len
-            left = int(np.searchsorted(analysis.frame_times, ps, side="left"))
-            right = int(np.searchsorted(analysis.frame_times, ps + phrase_len, side="right"))
+            left = int(np.searchsorted(frame_times_arr, ps, side="left"))
+            right = int(np.searchsorted(frame_times_arr, ps + phrase_len, side="right"))
             if right > left:
                 local = np.array(analysis.rms[left:right]) * 0.55 + np.array(analysis.onset_strength[left:right]) * 0.45
                 phrase_cache[phrase_idx] = float(np.mean(local))
@@ -1956,16 +1964,16 @@ def generate_chart(
         if phrase_idx != prev_phrase_idx:
             prev_phrase_idx = phrase_idx
 
-        onset = peak_near(analysis.frame_times, analysis.onset_strength, t, window)
-        energy = value_at(analysis.frame_times, analysis.rms, t)
-        high_band = value_at(analysis.frame_times, analysis.bands.high, t) if analysis.bands.high else 0.0
-        mid_band = value_at(analysis.frame_times, analysis.bands.mid, t) if analysis.bands.mid else 0.0
-        low_band = value_at(analysis.frame_times, analysis.bands.low, t) if analysis.bands.low else 0.0
-        melody_val = value_at(analysis.frame_times, analysis.melody, t) if has_melody else 0.5
+        onset = peak_near(frame_times_arr, analysis.onset_strength, t, window)
+        energy = value_at(frame_times_arr, analysis.rms, t)
+        high_band = value_at(frame_times_arr, analysis.bands.high, t) if analysis.bands.high else 0.0
+        mid_band = value_at(frame_times_arr, analysis.bands.mid, t) if analysis.bands.mid else 0.0
+        low_band = value_at(frame_times_arr, analysis.bands.low, t) if analysis.bands.low else 0.0
+        melody_val = value_at(frame_times_arr, analysis.melody, t) if has_melody else 0.5
 
         # --- Extended feature vector sampling (⑩) ---
         feats = analysis.features
-        ft = analysis.frame_times
+        ft = frame_times_arr
         vocal_presence = value_at(ft, feats.vocal_presence, t) if feats.vocal_presence else 0.0
         drum_fill = value_at(ft, feats.drum_fill, t) if feats.drum_fill else 0.0
         tension = value_at(ft, feats.tension, t) if feats.tension else 0.0
