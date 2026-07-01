@@ -1,0 +1,10 @@
+[
+  {"name": "trill_outer",     "category": "trill", "steps": [0.0, 1.0, 0.0, 1.0],             "min_keys": 4, "min_diff": "normal", "sections": ["chorus","solo","pre_chorus"], "intensity_min": 0.4},
+  {"name": "trill_inner",     "category": "trill", "steps": [0.33, 0.67, 0.33, 0.67],         "min_keys": 4, "min_diff": "normal", "sections": ["verse","chorus","bridge"],    "intensity_min": 0.3},
+  {"name": "trill_wide",      "category": "trill", "steps": [0.0, 1.0, 0.0, 1.0, 0.0, 1.0],  "min_keys": 4, "min_diff": "hard",   "sections": ["chorus","solo"],              "intensity_min": 0.5},
+  {"name": "trill_narrow",    "category": "trill", "steps": [0.4, 0.6, 0.4, 0.6, 0.4, 0.6],  "min_keys": 4, "min_diff": "easy",   "sections": ["verse","bridge","intro"],     "intensity_min": 0.0},
+  {"name": "trill_3way",      "category": "trill", "steps": [0.0, 0.5, 1.0, 0.5, 0.0, 0.5],  "min_keys": 4, "min_diff": "hard",   "sections": ["chorus","solo"],              "intensity_min": 0.5},
+  {"name": "trill_shift_up",  "category": "trill", "steps": [0.0, 0.33, 0.33, 0.67, 0.67, 1.0], "min_keys": 4, "min_diff": "hard", "sections": ["chorus","pre_chorus","solo"], "intensity_min": 0.5},
+  {"name": "trill_shift_down","category": "trill", "steps": [1.0, 0.67, 0.67, 0.33, 0.33, 0.0], "min_keys": 4, "min_diff": "hard", "sections": ["chorus","pre_chorus","solo"], "intensity_min": 0.5},
+  {"name": "trill_outer_long","category": "trill", "steps": [0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0], "min_keys": 4, "min_diff": "expert", "sections": ["chorus","solo"], "intensity_min": 0.7}
+]

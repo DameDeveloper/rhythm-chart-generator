@@ -1,0 +1,494 @@
+{
+  "metadata": {
+    "generator": "rhythm-chart-generator",
+    "source": "sample_128bpm.wav",
+    "duration": 24.0,
+    "bpm": 129.199,
+    "beat_offset": 0.2322,
+    "keys": 4,
+    "difficulty": "hard",
+    "note_count": 59,
+    "tap_count": 59,
+    "hold_count": 0,
+    "design_notes": [
+      "Strong beats are anchored when energy supports them.",
+      "Onset peaks drive accents and chord candidates.",
+      "Lane selection avoids excessive repeated hits and alternates hand shapes.",
+      "Phrase energy raises density during climactic sections."
+    ]
+  },
+  "notes": [
+    {
+      "time": 0.2322,
+      "lane": 0,
+      "kind": "tap",
+      "duration": 0.0,
+      "beat": 0.0,
+      "weight": 0.5166
+    },
+    {
+      "time": 0.4644,
+      "lane": 1,
+      "kind": "tap",
+      "duration": 0.0,
+      "beat": 0.5,
+      "weight": 0.7822
+    },
+    {
+      "time": 0.6966,
+      "lane": 2,
+      "kind": "tap",
+      "duration": 0.0,
+      "beat": 1.0,
+      "weight": 0.5179
+    },
+    {
+      "time": 0.9288,
+      "lane": 0,
+      "kind": "tap",
+      "duration": 0.0,
+      "beat": 1.5,
+      "weight": 0.7165
+    },
+    {
+      "time": 1.3932,
+      "lane": 2,
+      "kind": "tap",
+      "duration": 0.0,
+      "beat": 2.5,
+      "weight": 0.6632
+    },
+    {
+      "time": 1.6254,
+      "lane": 0,
+      "kind": "tap",
+      "duration": 0.0,
+      "beat": 3.0,
+      "weight": 0.5258
+    },
+    {
+      "time": 1.8576,
+      "lane": 1,
+      "kind": "tap",
+      "duration": 0.0,
+      "beat": 3.5,
+      "weight": 0.8391
+    },
+    {
+      "time": 2.0898,
+      "lane": 2,
+      "kind": "tap",
+      "duration": 0.0,
+      "beat": 4.0,
+      "weight": 0.6302
+    },
+    {
+      "time": 2.322,
+      "lane": 0,
+      "kind": "tap",
+      "duration": 0.0,
+      "beat": 4.5,
+      "weight": 0.8629
+    },
+    {
+      "time": 2.5542,
+      "lane": 1,
+      "kind": "tap",
+      "duration": 0.0,
+      "beat": 5.0,
+      "weight": 0.5556
+    },
+    {
+      "time": 2.7864,
+      "lane": 2,
+      "kind": "tap",
+      "duration": 0.0,
+      "beat": 5.5,
+      "weight": 0.8629
+    },
+    {
+      "time": 3.0186,
+      "lane": 0,
+      "kind": "tap",
+      "duration": 0.0,
+      "beat": 6.0,
+      "weight": 0.5693
+    },
+    {
+      "time": 3.2508,
+      "lane": 1,
+      "kind": "tap",
+      "duration": 0.0,
+      "beat": 6.5,
+      "weight": 0.8015
+    },
+    {
+      "time": 3.483,
+      "lane": 2,
+      "kind": "tap",
+      "duration": 0.0,
+      "beat": 7.0,
+      "weight": 0.505
+    },
+    {
+      "time": 3.7152,
+      "lane": 0,
+      "kind": "tap",
+      "duration": 0.0,
+      "beat": 7.5,
+      "weight": 0.6121
+    },
+    {
+      "time": 3.9474,
+      "lane": 2,
+      "kind": "tap",
+      "duration": 0.0,
+      "beat": 8.0,
+      "weight": 0.484
+    },
+    {
+      "time": 4.1796,
+      "lane": 3,
+      "kind": "tap",
+      "duration": 0.0,
+      "beat": 8.5,
+      "weight": 0.824
+    },
+    {
+      "time": 4.4118,
+      "lane": 0,
+      "kind": "tap",
+      "duration": 0.0,
+      "beat": 9.0,
+      "weight": 0.5959
+    },
+    {
+      "time": 4.644,
+      "lane": 1,
+      "kind": "tap",
+      "duration": 0.0,
+      "beat": 9.5,
+      "weight": 0.8629
+    },
+    {
+      "time": 4.8762,
+      "lane": 2,
+      "kind": "tap",
+      "duration": 0.0,
+      "beat": 10.0,
+      "weight": 0.5894
+    },
+    {
+      "time": 5.1084,
+      "lane": 0,
+      "kind": "tap",
+      "duration": 0.0,
+      "beat": 10.5,
+      "weight": 0.8629
+    },
+    {
+      "time": 5.3406,
+      "lane": 1,
+      "kind": "tap",
+      "duration": 0.0,
+      "beat": 11.0,
+      "weight": 0.576
+    },
+    {
+      "time": 5.5728,
+      "lane": 2,
+      "kind": "tap",
+      "duration": 0.0,
+      "beat": 11.5,
+      "weight": 0.7338
+    },
+    {
+      "time": 5.805,
+      "lane": 0,
+      "kind": "tap",
+      "duration": 0.0,
+      "beat": 12.0,
+      "weight": 0.5277
+    },
+    {
+      "time": 6.0372,
+      "lane": 2,
+      "kind": "tap",
+      "duration": 0.0,
+      "beat": 12.5,
+      "weight": 0.553
+    },
+    {
+      "time": 6.5016,
+      "lane": 0,
+      "kind": "tap",
+      "duration": 0.0,
+      "beat": 13.5,
+      "weight": 0.5969
+    },
+    {
+      "time": 6.7338,
+      "lane": 1,
+      "kind": "tap",
+      "duration": 0.0,
+      "beat": 14.0,
+      "weight": 0.5258
+    },
+    {
+      "time": 7.1982,
+      "lane": 0,
+      "kind": "tap",
+      "duration": 0.0,
+      "beat": 15.0,
+      "weight": 0.5211
+    },
+    {
+      "time": 7.6626,
+      "lane": 2,
+      "kind": "tap",
+      "duration": 0.0,
+      "beat": 16.0,
+      "weight": 0.5
+    },
+    {
+      "time": 8.127,
+      "lane": 1,
+      "kind": "tap",
+      "duration": 0.0,
+      "beat": 17.0,
+      "weight": 0.5074
+    },
+    {
+      "time": 11.7261,
+      "lane": 2,
+      "kind": "tap",
+      "duration": 0.0,
+      "beat": 24.75,
+      "weight": 0.6079
+    },
+    {
+      "time": 12.1905,
+      "lane": 3,
+      "kind": "tap",
+      "duration": 0.0,
+      "beat": 25.75,
+      "weight": 0.6868
+    },
+    {
+      "time": 12.6549,
+      "lane": 1,
+      "kind": "tap",
+      "duration": 0.0,
+      "beat": 26.75,
+      "weight": 0.7532
+    },
+    {
+      "time": 13.1193,
+      "lane": 2,
+      "kind": "tap",
+      "duration": 0.0,
+      "beat": 27.75,
+      "weight": 0.7072
+    },
+    {
+      "time": 13.5837,
+      "lane": 1,
+      "kind": "tap",
+      "duration": 0.0,
+      "beat": 28.75,
+      "weight": 0.6685
+    },
+    {
+      "time": 14.0481,
+      "lane": 1,
+      "kind": "tap",
+      "duration": 0.0,
+      "beat": 29.75,
+      "weight": 0.8088
+    },
+    {
+      "time": 14.2803,
+      "lane": 3,
+      "kind": "tap",
+      "duration": 0.0,
+      "beat": 30.25,
+      "weight": 0.5356
+    },
+    {
+      "time": 14.5125,
+      "lane": 2,
+      "kind": "tap",
+      "duration": 0.0,
+      "beat": 30.75,
+      "weight": 0.8634
+    },
+    {
+      "time": 14.7447,
+      "lane": 1,
+      "kind": "tap",
+      "duration": 0.0,
+      "beat": 31.25,
+      "weight": 0.6054
+    },
+    {
+      "time": 14.9769,
+      "lane": 3,
+      "kind": "tap",
+      "duration": 0.0,
+      "beat": 31.75,
+      "weight": 0.8591
+    },
+    {
+      "time": 15.2091,
+      "lane": 2,
+      "kind": "tap",
+      "duration": 0.0,
+      "beat": 32.25,
+      "weight": 0.5917
+    },
+    {
+      "time": 15.4413,
+      "lane": 1,
+      "kind": "tap",
+      "duration": 0.0,
+      "beat": 32.75,
+      "weight": 0.8632
+    },
+    {
+      "time": 15.6735,
+      "lane": 3,
+      "kind": "tap",
+      "duration": 0.0,
+      "beat": 33.25,
+      "weight": 0.5355
+    },
+    {
+      "time": 15.9057,
+      "lane": 2,
+      "kind": "tap",
+      "duration": 0.0,
+      "beat": 33.75,
+      "weight": 0.7198
+    },
+    {
+      "time": 16.3701,
+      "lane": 1,
+      "kind": "tap",
+      "duration": 0.0,
+      "beat": 34.75,
+      "weight": 0.6584
+    },
+    {
+      "time": 16.6023,
+      "lane": 3,
+      "kind": "tap",
+      "duration": 0.0,
+      "beat": 35.25,
+      "weight": 0.455
+    },
+    {
+      "time": 16.8345,
+      "lane": 1,
+      "kind": "tap",
+      "duration": 0.0,
+      "beat": 35.75,
+      "weight": 0.8374
+    },
+    {
+      "time": 17.0667,
+      "lane": 3,
+      "kind": "tap",
+      "duration": 0.0,
+      "beat": 36.25,
+      "weight": 0.5997
+    },
+    {
+      "time": 17.2989,
+      "lane": 2,
+      "kind": "tap",
+      "duration": 0.0,
+      "beat": 36.75,
+      "weight": 0.8632
+    },
+    {
+      "time": 17.5311,
+      "lane": 1,
+      "kind": "tap",
+      "duration": 0.0,
+      "beat": 37.25,
+      "weight": 0.5523
+    },
+    {
+      "time": 17.7633,
+      "lane": 3,
+      "kind": "tap",
+      "duration": 0.0,
+      "beat": 37.75,
+      "weight": 0.8632
+    },
+    {
+      "time": 17.9955,
+      "lane": 2,
+      "kind": "tap",
+      "duration": 0.0,
+      "beat": 38.25,
+      "weight": 0.5586
+    },
+    {
+      "time": 18.2277,
+      "lane": 1,
+      "kind": "tap",
+      "duration": 0.0,
+      "beat": 38.75,
+      "weight": 0.8055
+    },
+    {
+      "time": 18.6921,
+      "lane": 3,
+      "kind": "tap",
+      "duration": 0.0,
+      "beat": 39.75,
+      "weight": 0.4464
+    },
+    {
+      "time": 21.5946,
+      "lane": 2,
+      "kind": "tap",
+      "duration": 0.0,
+      "beat": 46.0,
+      "weight": 0.5563
+    },
+    {
+      "time": 22.059,
+      "lane": 1,
+      "kind": "tap",
+      "duration": 0.0,
+      "beat": 47.0,
+      "weight": 0.6132
+    },
+    {
+      "time": 22.5234,
+      "lane": 0,
+      "kind": "tap",
+      "duration": 0.0,
+      "beat": 48.0,
+      "weight": 0.6092
+    },
+    {
+      "time": 22.9878,
+      "lane": 2,
+      "kind": "tap",
+      "duration": 0.0,
+      "beat": 49.0,
+      "weight": 0.6117
+    },
+    {
+      "time": 23.4522,
+      "lane": 1,
+      "kind": "tap",
+      "duration": 0.0,
+      "beat": 50.0,
+      "weight": 0.4698
+    }
+  ]
+}
