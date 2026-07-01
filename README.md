@@ -109,7 +109,15 @@ JSON은 다음 구조입니다.
 ## 기술 문서 / 논문
 
 시스템의 오디오 분석 파이프라인, 패턴 스코어링 스케줄러, 모티프 기억, 밀도 제어기,
-품질 평가 방법론을 정리한 논문이 [`PAPER.md`](PAPER.md)에 있습니다.
+품질 평가 방법론을 정리한 논문을 마크다운과 PDF로 제공합니다.
+
+| 언어 | 마크다운 | PDF (학술지 양식) |
+|------|----------|-------------------|
+| 한국어 | [`PAPER.md`](PAPER.md) | [`Rhythm_Chart_Generator_paper_KO.pdf`](Rhythm_Chart_Generator_paper_KO.pdf) |
+| English | [`PAPER.en.md`](PAPER.en.md) | [`Rhythm_Chart_Generator_paper_EN.pdf`](Rhythm_Chart_Generator_paper_EN.pdf) |
+
+PDF는 수식(MathJax)·표·레이아웃이 뷰어와 무관하게 동일하게 렌더링되도록 학술지
+단(單)단 양식(JMLR/arXiv 프리프린트 스타일)으로 조판되어 있습니다.
 
 ## 라이선스
 
