@@ -1,50 +1,35 @@
-# Automatic Rhythm-Game Chart Generation via Rule-Based Music Analysis
+# An Explainable Rule-Based System for Automatic Rhythm-Game Chart Generation
 
-**Subtitle: An Explainable Chart-Generation System Combining a Lightweight DSP Pipeline with Feature-Based Pattern Scoring**
+Lee ChangHo (이창호)
 
-Rhythm Chart Generator — A Rule-Based, Explainable System for Automatic Rhythm-Game Chart Generation
+Independent Researcher, Republic of Korea
 
-Author: DameDeveloper
-Repository: https://github.com/DameDeveloper/rhythm-chart-generator
-License: MIT
-Date: 2026-07-02 (Revision v3 — review comments incorporated + quantitative performance comparison added)
+damelazydeveloper@gmail.com
 
 ---
 
 ## Abstract
 
-A *chart* in a rhythm game (EZ2ON, DJMAX, Project Sekai, etc.) is a sequence of
-notes in which an expert charter translates a song's rhythm, melody, and
-structure by hand. Charting is labor-intensive — hours to tens of hours per
-song — and quality depends heavily on the charter's skill. This paper proposes
-**Rhythm Chart Generator**, a system that takes arbitrary audio (a local WAV
-file or a YouTube link) and automatically produces charts for 4–8 key rhythm
-games.
+Creating charts for rhythm games (DJMAX, Project Sekai, etc.) — the note
+sequences that players hit — is labor-intensive and depends heavily on the
+charter's skill. We present **Rhythm Chart Generator**, a system that
+automatically produces 4–8 key charts from arbitrary audio (a local file or a
+YouTube link). It (i) estimates BPM, beats, section structure, instrument focus,
+and seven musical feature vectors with a lightweight NumPy signal-processing
+pipeline; (ii) places notes using a feature-based pattern-scoring scheduler,
+contour-based motif memory, and a closed-loop density controller; and (iii)
+scores each result on six quality dimensions and selects the best via multi-seed
+search. Rather than a learned black box, the proposed system encodes musical
+principles as explicit rules: it is reproducible with a fixed random seed while
+allowing controlled probabilistic variation, and it records post-hoc, traceable
+rationale for every note. Without copying any charter's work, it targets
+conformance to design principles common across commercial games. The system runs
+in pure Python/NumPy with no GPU or training data, processing a 3.5-minute song
+in about 1.4 seconds, and is released as an open-source desktop and web
+application.
 
-The proposed system (1) estimates BPM, beats, section structure, instrument
-focus, and seven musical feature vectors with a lightweight NumPy-based signal
-processing pipeline; (2) places notes using a **feature-based pattern scoring
-scheduler**, **contour-based motif memory**, and a **closed-loop density
-controller** driven by these features; and (3) scores the output across six
-quality dimensions and selects the best chart via multi-seed search. The whole
-process is not a learned black box but an **explicit encoding of musical
-principles as rules**; because its random number generator is seeded, it is
-**fully deterministic and reproducible for a given seed**, and it leaves
-**post-hoc explainability** diagnostics recording, for every pattern choice, the
-actual selection and its rationale (candidate list, scores, applied transform).
-Since the final selection stage includes softmax sampling, we characterize this
-not as full deterministic explainability but as **"reproducible, post-hoc
-traceable explainability with a probabilistic variation"** (§5.2, §8.1). Without
-copying any individual charter's work, the goal is to implement and verify —
-in the form of **conformance to predefined rules** — the design principles
-commonly observed across several commercial rhythm games.
-
-The system runs in pure Python + NumPy with no deep-learning model, GPU, or
-large training dataset, and is distributed both as a single-executable (Windows
-exe) desktop app and as a web application.
-
-**Keywords:** rhythm game, chart generation, music information retrieval (MIR),
-onset detection, beat tracking, procedural generation, explainable systems
+**Keywords:** Rhythm game; Chart generation; Music information retrieval (MIR);
+Procedural generation; Explainable systems
 
 ---
 
@@ -102,31 +87,35 @@ game design principles are referenced only as the *design rationale* for the
 rules; whether those principles are perceptually reproduced for humans was not
 verified by qualitative evaluation.
 
-The contributions of this paper are as follows.
+This paper makes the following five contributions.
 
-1. **A lightweight MIR pipeline in pure NumPy, without GPU or deep learning** —
-   it extracts autocorrelation-based local BPM estimation and a tempo map, band
-   separation, and seven chroma/spectral-feature-based musical feature vectors
-   (vocal presence, drum fill, tension, etc.) at near-real-time speed (§4).
-2. **A feature-based pattern scoring scheduler** — it applies a
-   "generate–evaluate–select" strategy at the pattern level: generate many
-   candidate patterns, score each against the live musical features, then select
-   via softmax sampling (§5.2).
-3. **Contour-based motif memory and section replay** — it recognizes phrases by
-   pitch-interval contour rather than absolute pitch, so a melody that recurs in
-   a different key still matches, and replays it with progressive transforms
-   (identity → mirror → reverse) (§5.3).
-4. **A rhythm-fit-preserving closed-loop density controller** — it feeds back the
-   error between target density (NPS) and actual density to adjust the placement
-   threshold, but multiple safeguards (**onset floor, energy floor, upper-bound
-   clamp**) categorically prevent notes from being generated where there is no
-   real attack. That is, it is designed so the density target cannot damage
-   rhythmic fit (§5.4).
-5. **A six-dimensional quality evaluator with multi-seed auto-improvement** — it
-   scores the output quantitatively on rule-conformance criteria and selects the
-   best of several candidates, leaving a traceable report of the selection
-   rationale. This evaluation is, as discussed in §8.2, explicitly a
-   **self-evaluation** (§6).
+**Contribution 1 — A lightweight MIR pipeline in pure NumPy, without GPU or deep
+learning.** It extracts autocorrelation-based local BPM estimation and a tempo
+map, band separation, and seven chroma/spectral-feature-based musical feature
+vectors (vocal presence, drum fill, tension, etc.) at near-real-time speed (§4).
+
+**Contribution 2 — A feature-based pattern scoring scheduler.** It applies a
+"generate–evaluate–select" strategy at the pattern level: generate many candidate
+patterns, score each against the live musical features, then select via softmax
+sampling (§5.2).
+
+**Contribution 3 — Contour-based motif memory and section replay.** It recognizes
+phrases by pitch-interval contour rather than absolute pitch, so a melody that
+recurs in a different key still matches, and replays it with progressive
+transforms (identity → mirror → reverse) (§5.3).
+
+**Contribution 4 — A rhythm-fit-preserving closed-loop density controller.** It
+feeds back the error between target density (NPS) and actual density to adjust
+the placement threshold, but multiple safeguards (onset floor, energy floor,
+upper-bound clamp) categorically prevent notes from being generated where there
+is no real attack. That is, it is designed so the density target cannot damage
+rhythmic fit (§5.4).
+
+**Contribution 5 — A six-dimensional quality evaluator with multi-seed
+auto-improvement.** It scores the output quantitatively on rule-conformance
+criteria and selects the best of several candidates, leaving a traceable report
+of the selection rationale. This evaluation is, as discussed in §8.2, explicitly
+a self-evaluation (§6).
 
 ---
 
@@ -622,7 +611,7 @@ substitute for such controlled experiments.
 
 ## 9. Conclusion
 
-This paper proposed **Rhythm Chart Generator**, a rule-based system that
+This paper proposed the system, a rule-based approach that
 automatically generates rhythm-game charts from arbitrary audio. It estimates a
 song's rhythm, structure, instruments, and musical character with a lightweight
 MIR pipeline, **encodes** expert-charter design principles **as rules** through
@@ -637,8 +626,16 @@ runs on a laptop-class CPU with no GPU, deep learning, or training data. That
 said, what this work demonstrates is **conformance to predefined rules**; the
 reproduction of human-perceived quality is future work to be validated via
 qualitative evaluation (§8.2). Within this scoped framing, the system offers a
-practical and transparent alternative for automatic chart generation. The system
-is released under the MIT license so anyone can use, modify, and extend it.
+practical and transparent alternative for automatic chart generation.
+
+---
+
+## Code and Data Availability
+
+The source code, sample data, and both the Korean and English versions of this
+paper are openly available under the MIT license at
+`https://github.com/DameDeveloper/rhythm-chart-generator`. All results in this
+paper are reproducible with the procedure in Appendix A.
 
 ---
 
@@ -675,36 +672,3 @@ differently-feeling patterns for the same song.
 | `chartgen.py` | CLI entry point |
 | `backend/main.py`, `frontend/` | web app |
 | `backend/desktop_app.py` | desktop app launcher |
-
-## Appendix C. Response to Reviewers (v2)
-
-This revision incorporated three review comments as follows.
-
-| # | Review comment | Incorporation |
-|---|-----------|-----------|
-| 1 | The randomness of softmax sampling conflicts with the 'explainability' claim | Lowered the claim to **"reproducible, post-hoc traceable explainability with a probabilistic variation."** Stated the grounds for seed determinism and post-hoc explanation, and the limit that a sampling realization does not reduce to rules (Abstract, new paragraph in §5.2, §8.1). Noted that temperature 0 (argmax) restores full determinism. |
-| 2 | Only self-evaluation exists; absent human cross-validation → the "quality reproduction" claim is inappropriate | Objectified the contribution claim to **"achieving conformance to predefined rules"** (scope stated in §1.3). Added a **Threats to Validity** section on the self-evaluative nature, circularity, and lack of construct validity (§8.2). Softened the strong claims in the Abstract and Conclusion. |
-| 3 | The density controller creates 'phantom notes' in quiet regions, damaging rhythmic fit | Added an **explicit onset floor** in code (`MIN_ONSET_FOR_BOOST=0.15`; blocks boosting below it) and documented it as a **layered safeguard** together with existing defenses (energy floor, contour gating, 1.6× cap, asymmetric trimming) (new §5.4.1). Supported rhythmic-fit preservation with regression metrics (overlap 0, alignment 1.0). |
-
-After the code change for comment 3, the regression tests (5 songs × 5
-difficulties = 25 checks) were re-run and all passed (mean quality 91.4, hold–tap
-overlap 0, grid alignment 1.0).
-
-### Appendix C-2. Additional Revision (v3 — quantitative performance comparison)
-
-An additional suggestion (comparison of compute/speed against recent
-learning-based generators) was incorporated as follows.
-
-- **New §2.1**: added a compute-profile comparison with learning-based generators
-  such as DDC [1] (Table 1) and the **measured performance** of the system
-  (Table 2). Measurement provenance is clearly distinguished as ★ (measured
-  directly in this work) / † (reported in the original paper/design), and the
-  absence of controlled same-hardware experiments is stated to avoid overclaiming
-  (linked to future work in §8.2/§8.3).
-- **Performance optimization**: pre-converting the frame-time axis to an ndarray
-  sped up generation by about 15× (6.4 s → 0.43 s for a 210 s song). The output
-  is bit-for-bit identical, so all prior quality/consistency results still hold.
-- Added a References section ([1] Donahue et al., ICML 2017).
-
-Measurement environment: single-threaded consumer CPU (AMD Ryzen family),
-Python 3.12 / NumPy 2.4, no GPU. See Appendix A for the reproduction procedure.
