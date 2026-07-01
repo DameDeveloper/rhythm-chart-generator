@@ -1447,6 +1447,13 @@ DIFFICULTY_PEAK_NPS: dict[str, float] = {
     "master": 12.0,
 }
 
+# Minimum onset strength required before the density controller is allowed to
+# *boost* placement (lower the threshold).  Below this floor the closed-loop
+# correction is clamped to ≤1.0, so the difficulty-arc density target can never
+# fabricate "phantom notes" where the audio has no real transient — protecting
+# rhythm fit in quiet / sustained passages.  See generate_chart().
+MIN_ONSET_FOR_BOOST = 0.15
+
 
 class DensityPlanner:
     """Real-time density feedback controller.
@@ -1982,6 +1989,14 @@ def generate_chart(
 
         build = upcoming_chorus_distance(analysis.sections, t, 8.0) * sty["buildup"]
         density_correction = density_planner.correction(t)
+        # Phantom-note safeguard: the density controller may *suppress* freely
+        # (correction < 1 raises the bar) but may only *boost* placement where a
+        # real transient exists.  Below a minimum onset floor we clamp the boost
+        # to ≤1.0, so the difficulty-arc target can never lower the threshold far
+        # enough to fabricate notes in a silent/sustained gap.  This keeps rhythm
+        # fit (notes on actual hits) from being sacrificed to density targeting.
+        if onset < MIN_ONSET_FOR_BOOST:
+            density_correction = min(density_correction, 1.0)
         threshold = float(cfg["accent"]) / (intensity * density_correction + build * 0.6)
 
         place = contour >= threshold
