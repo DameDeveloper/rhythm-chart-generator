@@ -1,0 +1,10 @@
+[
+  {"name": "burst_lr",         "category": "burst", "steps": [0.0, 0.33, 0.67, 1.0, 0.67, 0.33, 0.0],           "min_keys": 4, "min_diff": "hard",   "sections": ["chorus","solo"], "intensity_min": 0.6},
+  {"name": "burst_converge",   "category": "burst", "steps": [0.0, 1.0, 0.33, 0.67, 0.5],                       "min_keys": 4, "min_diff": "hard",   "sections": ["chorus","solo"], "intensity_min": 0.6},
+  {"name": "burst_spread",     "category": "burst", "steps": [0.5, 0.33, 0.67, 0.0, 1.0],                       "min_keys": 4, "min_diff": "hard",   "sections": ["chorus","solo"], "intensity_min": 0.6},
+  {"name": "burst_zigzag",     "category": "burst", "steps": [0.0, 1.0, 0.33, 0.67, 0.0, 1.0],                  "min_keys": 4, "min_diff": "expert", "sections": ["chorus","solo"], "intensity_min": 0.7},
+  {"name": "burst_full_sweep", "category": "burst", "steps": [0.0, 0.25, 0.5, 0.75, 1.0, 0.75, 0.5, 0.25, 0.0],"min_keys": 5, "min_diff": "expert", "sections": ["solo"],          "intensity_min": 0.8},
+  {"name": "burst_quick_3",    "category": "burst", "steps": [0.0, 0.5, 1.0],                                    "min_keys": 4, "min_diff": "normal", "sections": ["chorus","pre_chorus","solo"], "intensity_min": 0.4},
+  {"name": "burst_rev_3",      "category": "burst", "steps": [1.0, 0.5, 0.0],                                    "min_keys": 4, "min_diff": "normal", "sections": ["chorus","pre_chorus","solo"], "intensity_min": 0.4},
+  {"name": "burst_scatter",    "category": "burst", "steps": [0.0, 0.67, 0.33, 1.0, 0.0, 0.67],                  "min_keys": 4, "min_diff": "expert", "sections": ["chorus","solo"], "intensity_min": 0.7}
+]

@@ -1,0 +1,95 @@
+{
+  "_doc": "Pattern transition probabilities. Each key is a source category, values are {target_category: weight}. Higher weight = more likely transition. Weights are relative within each source row. Based on professional chart design: patterns flow naturally (stair→reverse_stair→trill) rather than jumping randomly (stair→jack→hold).",
+
+  "stair": {
+    "stair":  3.0,
+    "stream": 2.5,
+    "trill":  1.5,
+    "swing":  1.2,
+    "burst":  0.6,
+    "chord":  0.5,
+    "hold":   0.8,
+    "jack":   0.3
+  },
+  "stream": {
+    "stream": 2.5,
+    "stair":  2.8,
+    "trill":  2.0,
+    "swing":  1.5,
+    "burst":  1.0,
+    "chord":  0.8,
+    "hold":   0.6,
+    "jack":   0.4
+  },
+  "trill": {
+    "trill":  2.0,
+    "stair":  2.5,
+    "stream": 2.0,
+    "jack":   1.8,
+    "burst":  1.2,
+    "swing":  1.0,
+    "chord":  0.6,
+    "hold":   0.5
+  },
+  "jack": {
+    "jack":   1.5,
+    "trill":  2.5,
+    "burst":  2.0,
+    "stair":  1.5,
+    "stream": 1.0,
+    "chord":  1.2,
+    "swing":  0.5,
+    "hold":   0.3
+  },
+  "burst": {
+    "burst":  1.5,
+    "trill":  2.5,
+    "stream": 2.0,
+    "stair":  1.8,
+    "jack":   1.5,
+    "chord":  1.0,
+    "swing":  0.6,
+    "hold":   0.4
+  },
+  "chord": {
+    "chord":  1.8,
+    "stair":  2.5,
+    "hold":   2.0,
+    "stream": 1.5,
+    "swing":  1.5,
+    "trill":  0.8,
+    "burst":  0.6,
+    "jack":   0.4
+  },
+  "hold": {
+    "hold":   1.5,
+    "stair":  2.8,
+    "swing":  2.5,
+    "stream": 2.0,
+    "chord":  1.5,
+    "trill":  0.8,
+    "burst":  0.4,
+    "jack":   0.3
+  },
+  "swing": {
+    "swing":  2.0,
+    "stair":  2.5,
+    "hold":   2.0,
+    "stream": 1.8,
+    "trill":  1.2,
+    "chord":  1.0,
+    "burst":  0.5,
+    "jack":   0.3
+  },
+  "misc": {
+    "stair":  2.5,
+    "stream": 2.0,
+    "trill":  1.5,
+    "swing":  1.5,
+    "chord":  1.0,
+    "hold":   1.0,
+    "burst":  0.8,
+    "jack":   0.5,
+    "misc":   1.0
+  }
+}

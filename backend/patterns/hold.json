@@ -1,0 +1,9 @@
+[
+  {"name": "hold_melody_l",     "category": "hold", "steps": ["H0.0", 0.33, 0.67, 1.0, 0.67],  "min_keys": 4, "min_diff": "normal", "sections": ["verse","bridge","chorus"],    "intensity_min": 0.2},
+  {"name": "hold_melody_r",     "category": "hold", "steps": ["H1.0", 0.67, 0.33, 0.0, 0.33],  "min_keys": 4, "min_diff": "normal", "sections": ["verse","bridge","chorus"],    "intensity_min": 0.2},
+  {"name": "hold_inner_walk",   "category": "hold", "steps": ["H0.33", 0.67, 1.0, 0.67],       "min_keys": 4, "min_diff": "normal", "sections": ["verse","bridge"],              "intensity_min": 0.2},
+  {"name": "hold_outer_walk",   "category": "hold", "steps": ["H1.0", 0.0, 0.33, 0.67, 0.33],  "min_keys": 4, "min_diff": "hard",   "sections": ["chorus","verse"],              "intensity_min": 0.3},
+  {"name": "hold_dual",         "category": "hold", "steps": ["H0.0", "H1.0", 0.33, 0.67],     "min_keys": 4, "min_diff": "expert", "sections": ["chorus","solo"],               "intensity_min": 0.6},
+  {"name": "hold_stairs",       "category": "hold", "steps": ["H0.0", 0.33, 0.67, "H1.0", 0.67, 0.33], "min_keys": 4, "min_diff": "hard", "sections": ["chorus","bridge"],       "intensity_min": 0.4},
+  {"name": "hold_trill_over",   "category": "hold", "steps": ["H0.0", 0.67, 1.0, 0.67, 1.0],   "min_keys": 4, "min_diff": "hard",   "sections": ["chorus","solo"],               "intensity_min": 0.5}
+]

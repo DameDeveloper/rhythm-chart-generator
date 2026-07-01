@@ -1,0 +1,11 @@
+[
+  {"name": "chord_stairs_up",    "category": "chord", "steps": [[0.0,0.33], 0.67, [0.33,0.67], 1.0],                "min_keys": 4, "min_diff": "normal", "sections": ["chorus","solo"],              "intensity_min": 0.4},
+  {"name": "chord_stairs_down",  "category": "chord", "steps": [[0.67,1.0], 0.33, [0.33,0.67], 0.0],               "min_keys": 4, "min_diff": "normal", "sections": ["chorus","solo"],              "intensity_min": 0.4},
+  {"name": "chord_alt",          "category": "chord", "steps": [[0.0,0.33], [0.67,1.0], [0.0,0.33], [0.67,1.0]],   "min_keys": 4, "min_diff": "hard",   "sections": ["chorus","solo"],              "intensity_min": 0.5},
+  {"name": "chord_cross_out",    "category": "chord", "steps": [[0.33,0.67], [0.0,1.0]],                            "min_keys": 4, "min_diff": "hard",   "sections": ["chorus"],                    "intensity_min": 0.5},
+  {"name": "chord_cross_in",     "category": "chord", "steps": [[0.0,1.0], [0.33,0.67]],                            "min_keys": 4, "min_diff": "hard",   "sections": ["chorus"],                    "intensity_min": 0.5},
+  {"name": "chord_hammer",       "category": "chord", "steps": [[0.0,0.33], 0.67, 1.0, [0.0,0.33]],                "min_keys": 4, "min_diff": "normal", "sections": ["chorus","verse","pre_chorus"],"intensity_min": 0.3},
+  {"name": "chord_bracket",      "category": "chord", "steps": [[0.0,1.0], 0.33, 0.67, [0.0,1.0]],                 "min_keys": 4, "min_diff": "hard",   "sections": ["chorus","solo"],              "intensity_min": 0.6},
+  {"name": "chord_triple",       "category": "chord", "steps": [[0.0,0.33,0.67], [0.33,0.67,1.0]],                  "min_keys": 4, "min_diff": "expert", "sections": ["chorus","solo"],              "intensity_min": 0.7},
+  {"name": "chord_spread_walk",  "category": "chord", "steps": [[0.0,0.67], [0.33,1.0], [0.0,0.67]],               "min_keys": 4, "min_diff": "hard",   "sections": ["chorus","solo"],              "intensity_min": 0.5}
+]

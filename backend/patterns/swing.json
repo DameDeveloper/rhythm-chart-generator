@@ -1,0 +1,10 @@
+[
+  {"name": "swing_lr",          "category": "swing", "steps": [0.0, 0.67, 0.33, 1.0],                  "min_keys": 4, "min_diff": "normal", "sections": ["verse","chorus","bridge"],     "intensity_min": 0.2},
+  {"name": "swing_rl",          "category": "swing", "steps": [1.0, 0.33, 0.67, 0.0],                  "min_keys": 4, "min_diff": "normal", "sections": ["verse","chorus","bridge"],     "intensity_min": 0.2},
+  {"name": "swing_wide",        "category": "swing", "steps": [0.0, 1.0, 0.33, 0.67, 0.0, 1.0],       "min_keys": 4, "min_diff": "hard",   "sections": ["chorus","solo"],               "intensity_min": 0.5},
+  {"name": "swing_gentle",      "category": "swing", "steps": [0.33, 0.67, 0.33, 0.67],                "min_keys": 4, "min_diff": "easy",   "sections": ["intro","verse","bridge"],      "intensity_min": 0.0},
+  {"name": "vocal_wave",        "category": "swing", "steps": [0.25, 0.5, 0.75, 0.5, 0.25],            "min_keys": 4, "min_diff": "easy",   "sections": ["verse","bridge","intro"],      "intensity_min": 0.0},
+  {"name": "vocal_rise_fall",   "category": "swing", "steps": [0.0, 0.25, 0.5, 0.75, 1.0, 0.75, 0.5], "min_keys": 4, "min_diff": "normal", "sections": ["verse","chorus","pre_chorus"], "intensity_min": 0.3},
+  {"name": "onehand_l",         "category": "swing", "steps": [0.0, 0.17, 0.33, 0.17],                 "min_keys": 5, "min_diff": "expert", "sections": ["solo"],                       "intensity_min": 0.7},
+  {"name": "onehand_r",         "category": "swing", "steps": [0.67, 0.83, 1.0, 0.83],                 "min_keys": 5, "min_diff": "expert", "sections": ["solo"],                       "intensity_min": 0.7}
+]

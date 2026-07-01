@@ -1,0 +1,34 @@
+# Self-contained production web deployment.
+#
+#   docker compose -f docker-compose.prod.yml up --build
+#   -> open http://localhost:8080
+#
+# Runs on any Docker host (VPS, etc.). Put Cloudflare in front for TLS/CDN, or
+# use this as-is behind your own reverse proxy. For the Cloudflare Pages route
+# instead, see DEPLOY.md.
+
+services:
+  backend:
+    build: ./backend
+    restart: unless-stopped
+    expose:
+      - "8000"
+    volumes:
+      - downloads:/app/downloads
+
+  web:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.prod
+      args:
+        # Fill these in to enable AdSense (or leave blank for no ads).
+        VITE_ADSENSE_CLIENT: "${VITE_ADSENSE_CLIENT:-}"
+        VITE_ADSENSE_SLOT: "${VITE_ADSENSE_SLOT:-}"
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend
+
+volumes:
+  downloads:

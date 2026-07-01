@@ -1,0 +1,9 @@
+[
+  {"name": "stream_wave",       "category": "stream", "steps": [0.0, 0.33, 0.67, 1.0, 0.67, 0.33, 0.0, 0.33],            "min_keys": 4, "min_diff": "hard",   "sections": ["chorus","solo"],       "intensity_min": 0.5},
+  {"name": "stream_wave_fast",  "category": "stream", "steps": [0.0, 0.5, 1.0, 0.5, 0.0, 0.5, 1.0, 0.5, 0.0, 0.5],      "min_keys": 4, "min_diff": "expert", "sections": ["chorus","solo"],       "intensity_min": 0.7},
+  {"name": "stream_spiral_out", "category": "stream", "steps": [0.5, 0.67, 0.33, 0.83, 0.17, 1.0, 0.0],                  "min_keys": 5, "min_diff": "expert", "sections": ["solo"],                "intensity_min": 0.8},
+  {"name": "stream_spiral_in",  "category": "stream", "steps": [0.0, 1.0, 0.17, 0.83, 0.33, 0.67, 0.5],                  "min_keys": 5, "min_diff": "expert", "sections": ["solo"],                "intensity_min": 0.8},
+  {"name": "stream_double_step","category": "stream", "steps": [0.0, 0.0, 0.33, 0.33, 0.67, 0.67, 1.0, 1.0],             "min_keys": 4, "min_diff": "hard",   "sections": ["chorus","pre_chorus"], "intensity_min": 0.5},
+  {"name": "stream_gallop",     "category": "stream", "steps": [0.0, 0.0, 0.33, 0.67, 0.67, 1.0],                         "min_keys": 4, "min_diff": "hard",   "sections": ["chorus","solo"],       "intensity_min": 0.5},
+  {"name": "stream_roll",       "category": "stream", "steps": [0.0, 0.33, 0.67, 1.0, 0.0, 0.33, 0.67, 1.0],             "min_keys": 4, "min_diff": "expert", "sections": ["chorus","solo"],       "intensity_min": 0.6}
+]

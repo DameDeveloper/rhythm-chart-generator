@@ -1,0 +1,13 @@
+[
+  {"name": "stairs_up_4",      "category": "stair", "steps": [0.0, 0.33, 0.67, 1.0], "min_keys": 4, "min_diff": "easy",   "sections": ["verse","chorus","solo"], "intensity_min": 0.0},
+  {"name": "stairs_down_4",    "category": "stair", "steps": [1.0, 0.67, 0.33, 0.0], "min_keys": 4, "min_diff": "easy",   "sections": ["verse","chorus","solo"], "intensity_min": 0.0},
+  {"name": "stairs_up_8",      "category": "stair", "steps": [0.0, 0.14, 0.29, 0.43, 0.57, 0.71, 0.86, 1.0], "min_keys": 4, "min_diff": "hard", "sections": ["chorus","solo"], "intensity_min": 0.5},
+  {"name": "stairs_down_8",    "category": "stair", "steps": [1.0, 0.86, 0.71, 0.57, 0.43, 0.29, 0.14, 0.0], "min_keys": 4, "min_diff": "hard", "sections": ["chorus","solo"], "intensity_min": 0.5},
+  {"name": "stairs_bounce",    "category": "stair", "steps": [0.0, 0.33, 0.67, 1.0, 0.67, 0.33], "min_keys": 4, "min_diff": "normal", "sections": ["verse","chorus","pre_chorus"], "intensity_min": 0.3},
+  {"name": "stairs_rev_bounce","category": "stair", "steps": [1.0, 0.67, 0.33, 0.0, 0.33, 0.67], "min_keys": 4, "min_diff": "normal", "sections": ["verse","chorus","pre_chorus"], "intensity_min": 0.3},
+  {"name": "stairs_long_up",   "category": "stair", "steps": [0.0, 0.17, 0.33, 0.5, 0.67, 0.83, 1.0], "min_keys": 5, "min_diff": "hard", "sections": ["chorus","solo"], "intensity_min": 0.5},
+  {"name": "stairs_long_down", "category": "stair", "steps": [1.0, 0.83, 0.67, 0.5, 0.33, 0.17, 0.0], "min_keys": 5, "min_diff": "hard", "sections": ["chorus","solo"], "intensity_min": 0.5},
+  {"name": "stairs_skip_up",   "category": "stair", "steps": [0.0, 0.5, 0.25, 0.75, 0.5, 1.0], "min_keys": 4, "min_diff": "hard", "sections": ["chorus","solo"], "intensity_min": 0.5},
+  {"name": "stairs_skip_down", "category": "stair", "steps": [1.0, 0.5, 0.75, 0.25, 0.5, 0.0], "min_keys": 4, "min_diff": "hard", "sections": ["chorus","solo"], "intensity_min": 0.5},
+  {"name": "stairs_zigzag",    "category": "stair", "steps": [0.0, 0.67, 0.33, 1.0], "min_keys": 4, "min_diff": "normal", "sections": ["verse","chorus","pre_chorus"], "intensity_min": 0.3}
+]
