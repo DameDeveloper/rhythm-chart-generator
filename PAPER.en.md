@@ -1,4 +1,4 @@
-# An Explainable Rule-Based System for Automatic Rhythm-Game Chart Generation
+# An Explainable Rule-Based Approach to Automatic Rhythm Game Chart Generation
 
 Lee ChangHo (이창호)
 
@@ -10,9 +10,11 @@ damelazydeveloper@gmail.com
 
 ## Abstract
 
-Creating charts for rhythm games (DJMAX, Project Sekai, etc.) — the note
-sequences that players hit — is labor-intensive and depends heavily on the
-charter's skill. We present **Rhythm Chart Generator**, a system that
+Chart creation is a central content-creation task in rhythm-based music games
+(DJMAX, Project Sekai, etc.): the note sequences players hit are traditionally
+authored by hand by expert charters, making the process labor-intensive and
+heavily dependent on individual expertise. We present **Rhythm Chart
+Generator**, a system that
 automatically produces 4–8 key charts from arbitrary audio (a local file or a
 YouTube link). It (i) estimates BPM, beats, section structure, instrument focus,
 and seven musical feature vectors with a lightweight NumPy signal-processing
@@ -37,9 +39,10 @@ Procedural generation; Explainable systems
 
 ### 1.1 Background
 
-In rhythm games the chart is the core gameplay content. Even for the same song,
-the play experience varies greatly with chart quality. A good chart has the
-following properties.
+In rhythm games the chart is the core piece of game content, and producing it
+automatically is a procedural content generation (PCG) problem specific to music
+games. Even for the same song, the player experience varies greatly with chart
+quality. A good chart has the following properties.
 
 - **Rhythmic fit**: notes coincide with the song's actual attack points (kick,
   snare, hi-hat, vocal onsets).
@@ -119,7 +122,7 @@ a self-evaluation (§6).
 
 ---
 
-## 2. Related Work
+## 2. Rhythm Game Chart Generation and Procedural Content Generation
 
 **Beat tracking and onset detection.** BPM/beat estimation is a classic MIR
 problem; spectral-flux-based onset detection and autocorrelation/comb-filter
@@ -625,8 +628,10 @@ under a fixed seed and post-hoc traceable (limited explainability, §8.1), and i
 runs on a laptop-class CPU with no GPU, deep learning, or training data. That
 said, what this work demonstrates is **conformance to predefined rules**; the
 reproduction of human-perceived quality is future work to be validated via
-qualitative evaluation (§8.2). Within this scoped framing, the system offers a
-practical and transparent alternative for automatic chart generation.
+qualitative evaluation (§8.2). Within this scoped framing, the proposed system
+contributes a practical, transparent, and reproducible approach to automatic
+chart generation for rhythm games, adding a content-creation-oriented tool to
+the procedural generation of music-game content.
 
 ---
 
