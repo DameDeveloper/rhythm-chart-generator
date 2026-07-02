@@ -4,11 +4,13 @@ Lee ChangHo (이창호)
 Independent Researcher, Republic of Korea
 damelazydeveloper@gmail.com
 
+2026-07-03
+
 ---
 
 Dear Editors of *Entertainment Computing*,
 
-I am pleased to submit our manuscript, **"An Explainable Rule-Based Approach to
+I am pleased to submit my manuscript, **"An Explainable Rule-Based Approach to
 Automatic Rhythm Game Chart Generation,"** for consideration as a research
 article in *Entertainment Computing*.
 
@@ -33,19 +35,19 @@ traceable rationale for every note. It runs on a laptop-class CPU with no GPU,
 deep-learning framework, or training data, processing a 3.5-minute song in about
 1.4 seconds.
 
-**Scope of claims.** We are careful to scope our empirical claims: the paper
+**Scope of claims.** I am careful to scope the empirical claims: the paper
 demonstrates *conformance to predefined charting rules*, not the reproduction of
-human-perceived quality, which we identify explicitly as future work (a user
-study and a controlled comparison against learning-based generators). We believe
+human-perceived quality, which is identified explicitly as future work (a user
+study and a controlled comparison against learning-based generators). I believe
 this transparent framing strengthens rather than weakens the contribution.
 
 **Originality and ethics.** The system does not learn from or copy any
 individual charter's work; it codifies design principles that are commonly
 perceived as "good charting" across several commercial games. The full source
 code, sample data, and both Korean and English versions of the paper are openly
-available under the MIT license at
-https://github.com/DameDeveloper/rhythm-chart-generator, and all results are
-reproducible with the procedure in the appendix.
+available under the MIT license (repository URL provided in the non-anonymized
+title page and withheld from the blind manuscript for review), and all results
+are reproducible with the procedure in the appendix.
 
 This manuscript is original, has not been published elsewhere, and is not under
 consideration by any other journal. There are no conflicts of interest to
