@@ -8,12 +8,12 @@ matching item type in the Editorial Manager system.
 
 | File | Elsevier item type |
 |------|--------------------|
-| [`01_Cover_Letter.md`](01_Cover_Letter.md) | Cover Letter |
-| [`02_Highlights.md`](02_Highlights.md) | Highlights (3–5 points, ≤85 chars each) |
-| [`03_Title_Page.md`](03_Title_Page.md) | Title Page (with author information) |
-| [`04_Manuscript_Blind.md`](04_Manuscript_Blind.md) | Manuscript **without** author identifiers |
-| [`05_Declaration_of_Interest.md`](05_Declaration_of_Interest.md) | Declaration of Interest Statement |
-| [`06_Conflict_of_Interest.md`](06_Conflict_of_Interest.md) | Conflict of Interest Statement |
+| [`Cover_Letter.md`](Cover_Letter.md) / [`Cover_Letter.pdf`](Cover_Letter.pdf) | Cover Letter |
+| [`Highlights.md`](Highlights.md) / [`Highlights.pdf`](Highlights.pdf) | Highlights (3–5 points, ≤85 chars each) |
+| [`Title_Page.md`](Title_Page.md) / [`Title_Page.pdf`](Title_Page.pdf) | Title Page (with author information) |
+| [`Manuscript_Blind.md`](Manuscript_Blind.md) / [`Manuscript_Blind.pdf`](Manuscript_Blind.pdf) | Manuscript **without** author identifiers |
+| [`Declaration_of_Interest.md`](Declaration_of_Interest.md) / [`Declaration_of_Interest.pdf`](Declaration_of_Interest.pdf) | Declaration of Interest Statement |
+| [`Conflict_of_Interest.md`](Conflict_of_Interest.md) / [`Conflict_of_Interest.pdf`](Conflict_of_Interest.pdf) | Conflict of Interest Statement |
 
 Notes:
 
